@@ -4,7 +4,7 @@ This is a CRUD application. It is possible to create, update and delete blog pos
 The app is written in a way that CRUD-logic functions are clearly separated from UI-painting functions. 
 
 ## Intended usage
-In order to keep everyhting working correctly, it's requiered to launch locally a fake server. The reason for that the application can fetch the data from there propperly. Specifically, I have been using json-server for that purpose and I highly recommend using it. By default, it launches a server on port 3000 (http://localhost:3000) and it's on that port where the application will try to connect when fetching data. 
+In order to keep everyhting working correctly, it's requiered to launch locally a fake server. Specifically, I have used json-server for that purpose and I highly recommend using it. By default, it launches a server on port 3000 (http://localhost:3000) and it's on that port where the application will try to connect when fetching data. 
 
 ## Installing json-server
 Installing json-server is very easy with npm:
@@ -13,7 +13,7 @@ Installing json-server is very easy with npm:
 npm install -g json-server
 ```
 
-Then, within the project folder, let's launch our db.json file on port 3000:
+Then, within the project folder, let's launch our db.json file on port 3000 (default):
 
 ```
 json-server -w db.json 
