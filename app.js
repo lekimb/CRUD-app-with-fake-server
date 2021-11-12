@@ -1,4 +1,4 @@
-// HTTP module
+// HTTP controller
 class HTTP {
     // HTTP get request
     async get(url) {
@@ -55,7 +55,7 @@ const http = new HTTP();
 
 
 
-// UI module
+// UI controller
 class UI{
     // Constructor function
     constructor(){
@@ -148,7 +148,7 @@ ui.form.addEventListener('click', deleteItem);
 function loadItems() {
     http.get('http://localhost:3000/posts')
         .then(items => {
-            // Make sure the parameter the passed to paintItems is an array
+            // Make sure the parameter passed to paintItems is an array
             if (Array.from(items).length === 0) {
                 items = [];
             }
@@ -172,22 +172,7 @@ function submitItem(e) {
         date: date
     };
     
-    // Validation 
-    // if (title !== '') {
-    //     ui.titleInput.style.borderColor = '';
-    // } else {
-    //     ui.titleInput.style.borderColor = 'red';
-    // }
-    // if (author !== '') {
-    //     ui.authorInput.style.borderColor = '';
-    // } else {
-    //     ui.authorInput.style.borderColor = 'red';
-    // }
-    // if (body !== '') {
-    //     ui.bodyInput.style.borderColor = '';
-    // } else {
-    //     ui.bodyInput.style.borderColor = 'red';
-    // }
+    // Simple validation 
     if (title === '' || author === '' || body === '') return;
 
     // Add Item
@@ -258,13 +243,15 @@ function selectItem(e) {
             it.selected = null;
 
             // Switch off editState
-            it.switchOffEditState();
-            
-        }
-        
+            it.switchOffEditState();   
+        }  
     }
 }
 
+
+
+
+// CRUD logic
 function deleteItem(e) {
     e.preventDefault();
 
@@ -310,14 +297,3 @@ function deleteItemById(id) {
             console.log(data);
         });
 }
-
-
-
-// getItems();
-// postItem({name: 'Marta', age: 30});
-// getItems();
-
-// NO FUNCIONA: postItem se invoca sin parar en vez una sola vez
-// SOLUCIONADO: el tema es que postItem recarga la página después de hacer su petición. Entonces, si había sido invocada desde app.js simplemente, entramos en un bucle infinito de invocaciones y recargas que no para de enviar peticiones al servidor.
-
-// NOTA: Si se usan módulos, entonces no se puede acceder a las variables y funciones declaradas desde la consola del navegador ¿?
