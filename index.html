@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="form">
+            <form id="form">
+                <h1>Blog entry</h1>
+                <label for="title"></label>
+                <input type="text" id="title" placeholder="Title">
+                <label for="author"></label>
+                <input type="text" id="author" placeholder="Author"> 
+                <textarea id="body" placeholder="Post something..."></textarea>
+                <h6>Click blog posts to edit or delete them</h6>
+                <input type="submit" id="button" value="Post it!">
+            </form>
+        </div>
+        <div class="posts" id="container"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
