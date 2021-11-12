@@ -13,9 +13,9 @@ Installing json-server is very easy with npm:
 npm install -g json-server
 ```
 
-Then, within the project folder, let's launch our db.json file on port 3000 (default):
+Then, within the project folder, let's launch locally our db.json file:
 
 ```
 json-server -w db.json 
 ```
-And that's it! Now you can run the application and everything should work correctly. 
+And that's it! Now everything is set up and ready to run the application. 
